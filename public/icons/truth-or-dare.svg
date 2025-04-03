@@ -1,0 +1,8 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="30" width="140" height="140" rx="10" fill="#FFF" stroke="#E0E0E0" stroke-width="2"/>
+  <circle cx="100" cy="85" r="40" fill="#FFDE59"/>
+  <path d="M80 85C80 85 85 95 100 95C115 95 120 85 120 85" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="85" cy="75" r="5" fill="#000"/>
+  <circle cx="115" cy="75" r="5" fill="#000"/>
+  <text x="60" y="150" fill="#333" font-family="Arial" font-weight="bold" font-size="14">Truth or Dare</text>
+</svg> 
