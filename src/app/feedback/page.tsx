@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { games } from '@/data/games';
 
 export default function Feedback() {
     return (
@@ -42,10 +43,9 @@ export default function Feedback() {
                                     className="w-full rounded-md border border-gray-300 dark:border-gray-600 p-2 dark:bg-gray-700"
                                 >
                                     <option value="">Select a game</option>
-                                    <option value="magic-8-ball">Magic 8 Ball</option>
-                                    <option value="truth-or-dare">Truth or Dare</option>
-                                    <option value="never-have-i-ever">Never Have I Ever</option>
-                                    <option value="who-is-most-likely">Who Is Most Likely</option>
+                                    {games.filter(game => game.id !== 'coming-soon').map(game => (
+                                        <option key={game.id} value={game.id}>{game.title}</option>
+                                    ))}
                                 </select>
                             </div>
 

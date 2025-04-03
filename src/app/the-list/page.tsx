@@ -1,6 +1,42 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
+interface UpcomingGame {
+    title: string;
+    description: string;
+}
+
+const upcomingGames: UpcomingGame[] = [
+    {
+        title: "Pictionary",
+        description: "Draw and guess pictures with your friends in this fun drawing game."
+    },
+    {
+        title: "Two Truths and a Lie",
+        description: "Tell two true statements and one false one, and see if others can spot the lie."
+    },
+    {
+        title: "Word Association",
+        description: "Quickly respond with related words in this fast-paced word game."
+    },
+    {
+        title: "Categories",
+        description: "Think fast and name items in various categories before time runs out."
+    },
+    {
+        title: "Werewolf",
+        description: "A social deduction game where villagers try to identify the werewolves among them."
+    },
+    {
+        title: "Trivia Night",
+        description: "Test your knowledge across various topics in this competitive quiz game."
+    },
+    {
+        title: "Scavenger Hunt",
+        description: "Race to find items or complete challenges in this exciting search game."
+    }
+];
+
 export default function TheList() {
     return (
         <div className="min-h-screen flex flex-col">
@@ -15,40 +51,17 @@ export default function TheList() {
 
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <ul className="space-y-4">
-                            <li className="border-b border-gray-200 dark:border-gray-700 pb-4">
-                                <h3 className="text-xl font-semibold mb-2">Charades</h3>
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    The classic game of acting out words or phrases without speaking.
-                                </p>
-                            </li>
-
-                            <li className="border-b border-gray-200 dark:border-gray-700 pb-4">
-                                <h3 className="text-xl font-semibold mb-2">Pictionary</h3>
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Draw and guess pictures with your friends in this fun drawing game.
-                                </p>
-                            </li>
-
-                            <li className="border-b border-gray-200 dark:border-gray-700 pb-4">
-                                <h3 className="text-xl font-semibold mb-2">Two Truths and a Lie</h3>
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Tell two true statements and one false one, and see if others can spot the lie.
-                                </p>
-                            </li>
-
-                            <li className="border-b border-gray-200 dark:border-gray-700 pb-4">
-                                <h3 className="text-xl font-semibold mb-2">Word Association</h3>
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Quickly respond with related words in this fast-paced word game.
-                                </p>
-                            </li>
-
-                            <li>
-                                <h3 className="text-xl font-semibold mb-2">Would You Rather</h3>
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Choose between two difficult or silly scenarios and discuss your choices.
-                                </p>
-                            </li>
+                            {upcomingGames.map((game, index) => (
+                                <li
+                                    key={index}
+                                    className={index < upcomingGames.length - 1 ? "border-b border-gray-200 dark:border-gray-700 pb-4" : ""}
+                                >
+                                    <h3 className="text-xl font-semibold mb-2">{game.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300">
+                                        {game.description}
+                                    </p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
